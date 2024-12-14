@@ -96,7 +96,7 @@ body {
     font-size: .85rem;
 }
 
-.error-message {
+.errorMessage {
     color: var(--clr-red);
     font-size: 1.4rem;
     margin-top: 0.5rem;
