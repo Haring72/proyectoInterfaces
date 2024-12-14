@@ -1,5 +1,3 @@
-'use strict'
-
 document.addEventListener('DOMContentLoaded', function() {
 	const form = document.getElementById('formularioLogin');
 	const nombreInput = document.getElementById('nombre');
