@@ -8,29 +8,27 @@
 	<script type="text/javascript" src="js/carrito.js"></script>
 </head>
 <body>
-	<h1>Carbashop</h1>
-
-	<main id="carritoContainer">
-		<aside id="menuLateralCarrito">
-			<nav>
-				<ul>
-					<li><a href="productos.html">Volver a productos</a></li>
-					<li><a href="#" id="verCarrito">Ver carrito</a></li>
-				</ul>
-			</nav>
-		</aside>
-
-		<section id="listaCarrito"></section>
+	<div id="carritoContainer">
+		<main id="listaCarrito"></main>
 
 		<div id="resumenCarrito">
-			<p>Total: <span id="precioTotal">0</span></p>
 			<button id="vaciarCarrito">Vaciar carrito</button>
+			<span id="precioTotal">Total: 0</span>
 			<button id="comprarAhora">Comprar ahora</button>
 		</div>
-	</main>
 
-	<footer>
-		<p>&copy; Alexandre González Santos</p>
-	</footer>
+		<aside id="menuLateralCarrito">
+			<h1>Carbashop</h1>
+			<nav>
+				<ul>
+					<li><a href="productos.html">Seguir comprando</a></li>
+					<li id="verCarrito">Ver carrito</li>
+				</ul>
+			</nav>
+			<footer>
+				<p>&copy; Alexandre González Santos</p>
+			</footer>
+		</aside>
+	</div>
 </body>
 </html>

@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			total += subtotal;
 		});
 
-		precioTotal.textContent = total.toFixed(2);
+		precioTotal.textContent = `Total: ${total.toFixed(2)}€`;
 	}
 
 	window.eliminarDelCarrito = function(id) {
