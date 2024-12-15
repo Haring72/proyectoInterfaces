@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+	const logo = document.querySelector('.atras');
+	logo.addEventListener('click', function() {
+		window.location.href = 'index.html';
+	});
+
 	let productos = [];
 	let carrito = [];
 

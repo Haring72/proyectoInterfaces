@@ -192,6 +192,8 @@ footer {
     flex: 1;
     padding: 2rem;
     border-radius: 3rem;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 #listaProductos {
@@ -377,5 +379,9 @@ footer {
     border: none;
     color: var(--clr-red);
     font-weight: bold;
+    cursor: pointer;
+}
+
+.atras {
     cursor: pointer;
 }
