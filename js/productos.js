@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		.then(data => {
 			productos = data;
 			mostrarProductos(productos);
+
+			document.getElementById('mostrarTodos').addEventListener('click', () => mostrarProductos(productos));
+			document.getElementById('mostrarMoviles').addEventListener('click', () => filtrarProductos('moviles'));
+			document.getElementById('mostrarPortatiles').addEventListener('click', () => filtrarProductos('portatiles'));
+			document.getElementById('mostrarTelevisores').addEventListener('click', () => filtrarProductos('televisiones'));
 		})
 		.catch(error => console.error('Error al cargar productos: ', error));
 
@@ -25,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			`;
 			listaProductos.appendChild(productoElement);
 		});
+	}
+
+	function filtrarProductos(categoriaId) {
+		const productosFiltrados = productos.filter(producto => producto.categoria.id === categoriaId);
+		mostrarProductos(productosFiltrados);
 	}
 
 	window.agregarAlCarrito = function(id) {
