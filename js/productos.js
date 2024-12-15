@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			productoElement.innerHTML = `
 				<img src="${producto.imagen}" alt="${producto.titulo}">
 				<h3>${producto.titulo}</h3>
-				<p>Precio: ${producto.precio}€</p>
+				<p>${producto.precio}€</p>
 				<button onclick="agregarAlCarrito('${producto.id}')">Agregar al carrito</button>
 			`;
 			listaProductos.appendChild(productoElement);
