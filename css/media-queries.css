@@ -1,0 +1,28 @@
+@media (max-width: 850px) {
+	#listaProductos {
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	}
+}
+
+@media (max-width: 675px) {
+	nav ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nav ul li {
+		margin: 0.5rem 0;
+	}
+}
+
+@media (max-width: 600px) {
+	#listaProductos {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 400px) {
+	body {
+		padding: 1rem;
+	}
+}
