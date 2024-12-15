@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+	const logo = document.querySelector('.atras');
+	logo.addEventListener('click', function() {
+		window.location.href = 'index.html';
+	});
+	
 	let carrito = [];
 	const listaCarrito = document.getElementById('listaCarrito');
 	const precioTotal = document.getElementById('precioTotal');
@@ -35,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			total += subtotal;
 		});
 
-		precioTotal.textContent = total.toFixed(2);
+		precioTotal.textContent = `Total: ${total.toFixed(2)}€`;
 	}
 
 	window.eliminarDelCarrito = function(id) {

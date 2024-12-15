@@ -36,6 +36,7 @@ a {
 body {
     background-color: var(--clr-main);
     color: var(--clr-white);
+    display: flex;
 }
 
 nav {
@@ -47,6 +48,8 @@ nav ul {
     justify-content: center;
     list-style-type: none;
     padding: 0;
+    flex-direction: column;
+    justify-content: center;
 }
 
 nav ul li a {
@@ -74,12 +77,13 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex: 1;
 }
 
 #loginContainer h2 {
     color: var(--clr-main);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #formularioLogin {
@@ -94,26 +98,29 @@ footer {
 #formularioLogin input[type="password"] {
     width: 100%;
     padding: 0.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border: 0.1rem solid var(--clr-gray);
-    border-radius: 1.5rem;
+    border-radius: 0.3rem;
 }
 
 #buttons {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 1.5rem;
+    gap: 0.5rem;
 }
 
 #submit,
 #limpiar {
     background-color: var(--clr-main);
     color: var(--clr-white);
-    padding: 1rem 2rem;
+    padding: 0.5rem 6rem;
     border: none;
     border-radius: 0.4rem;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 0.8rem;
+    flex: 1;
 }
 
 #submit:hover,
@@ -126,69 +133,147 @@ footer {
 
 #paginaProductos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100vh;
     padding: 2rem;
+    flex: 1;
 }
 
 #logoProductos {
-    color: var(--clr-main);
+    color: var(--clr-white);
     text-align: center;
     margin-bottom: 2rem;
 }
 
+#menuLateral {
+    display: flex;
+    flex-direction: column;
+    width: 15.6rem;
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: 2rem;
+}
+
+#menuLateral h1 {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#menuLateral ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menuLateral ul li {
+    margin-bottom: 1rem;
+}
+
+#menuLateral button,
+#menuLateral a {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#menuLateral button:hover,
+#menuLateral a:hover {
+    background-color: var(--clr-main-light);
+}
+
+#contenedorProductos {
+    background-color: var(--clr-white);
+    flex: 1;
+    padding: 2rem;
+    border-radius: 3rem;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
 #listaProductos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
     margin-bottom: 2rem;
+    padding: 1rem;
 }
 
 
 /* IDs carrito.html */
 
 #carritoContainer {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 15.6rem;
+    grid-template-rows: auto auto;
     min-height: 100vh;
     padding: 2rem;
+    flex: 1;
 }
 
-#menuLateral {
-    background-color: var(--clr-white);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-#menuLateral ul {
+#menuLateralCarrito {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    height: 100%;
+    grid-column: 2;
+    grid-row: span 2;
+    padding: 1rem;
 }
 
-#menuLateral ul li {
-    margin-bottom: 0.5rem;
+#menuLateralCarrito nav {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#menuLateral ul li a {
+#menuLateralCarrito ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+#menuLateralCarrito ul li {
+    margin-bottom: 1rem;
     color: var(--clr-main);
-    font-size: 1.2rem;
+    background-color: var(--clr-white);
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    text-align: center;
+}
+
+#menuLateralCarrito ul li a {
+    font-size: 1rem;
+    color: var(--clr-main);
 }
 
 #listaCarrito {
+    grid-column: 1;
+    grid-row: 1;
     background-color: var(--clr-white);
-    padding: 1rem;
-    border-radius: 0.5rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
     margin-bottom: 1rem;
+    min-height: 50rem;
 }
 
 #resumenCarrito {
+    grid-column: 1;
+    grid-row: 2;
     background-color: var(--clr-white);
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-height: 7rem;
 }
 
 #precioTotal {
@@ -223,6 +308,80 @@ footer {
 
 .errorMessage {
     color: var(--clr-red);
-    font-size: 1.4rem;
-    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+}
+
+.producto {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    text-align: center;
+    padding: 1rem;
+}
+
+.producto img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.producto h3 {
+    font-size: 1rem;
+}
+
+.producto p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.producto button {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background-color: var(--clr-main-light);
+}
+
+.productoCarrito {
+    display: flex;
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+}
+
+.productoCarrito img {
+    width: 100%;
+    max-width: 3rem;
+}
+
+.productoCarrito h3 {
+    font-size: 1rem;
+}
+
+.productoCarrito p {
+    font-size: 0.9rem;
+}
+
+.productoCarrito button {
+    background: none;
+    border: none;
+    color: var(--clr-red);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.atras {
+    cursor: pointer;
 }

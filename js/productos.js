@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+	const logo = document.querySelector('.atras');
+	logo.addEventListener('click', function() {
+		window.location.href = 'index.html';
+	});
+
 	let productos = [];
 	let carrito = [];
 
@@ -7,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		.then(data => {
 			productos = data;
 			mostrarProductos(productos);
+
+			document.getElementById('mostrarTodos').addEventListener('click', () => mostrarProductos(productos));
+			document.getElementById('mostrarMoviles').addEventListener('click', () => filtrarProductos('moviles'));
+			document.getElementById('mostrarPortatiles').addEventListener('click', () => filtrarProductos('portatiles'));
+			document.getElementById('mostrarTelevisores').addEventListener('click', () => filtrarProductos('televisiones'));
 		})
 		.catch(error => console.error('Error al cargar productos: ', error));
 
@@ -20,11 +30,16 @@ document.addEventListener('DOMContentLoaded', function() {
 			productoElement.innerHTML = `
 				<img src="${producto.imagen}" alt="${producto.titulo}">
 				<h3>${producto.titulo}</h3>
-				<p>Precio: ${producto.precio}€</p>
+				<p>${producto.precio}€</p>
 				<button onclick="agregarAlCarrito('${producto.id}')">Agregar al carrito</button>
 			`;
 			listaProductos.appendChild(productoElement);
 		});
+	}
+
+	function filtrarProductos(categoriaId) {
+		const productosFiltrados = productos.filter(producto => producto.categoria.id === categoriaId);
+		mostrarProductos(productosFiltrados);
 	}
 
 	window.agregarAlCarrito = function(id) {
